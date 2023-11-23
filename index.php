@@ -1,94 +1,6 @@
 <?php 
 
-$str_user = $_GET[ "str_length" ];
-var_dump( $str_user );
-
-$int_user = intval( $str_user ) ;
-var_dump( $int_user ) ;
-
-$letter_up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-$letter_low = "abcdefghijklmnopqrstuvwxyz";
-
-$symbols = ",./-&%!?§_";
-
-$int = '1234567890';
-
-
-
-function intRandom ($min, $max) {
-    $index = mt_rand ( $min , $max );
-
-    return $index;
-}
-
-
-$pass_let_low = '';
-// var_dump ($pass_let_low);
-
-for ($i = 0 ; $i < $int_user; $i++) {
-    
-    $current_letters_low = intRandom (0, 25);
-    // var_dump($current_letters_low);
-
-    $letters_low_random = $letter_low[$current_letters_low];
-    // var_dump($letters_low_random);
-
-    $pass_let_low .= $letters_low_random;
-
-
-};
-
-$pass_let_up  = '';
-// var_dump($pass_let_up );
-
-for ($i = 0 ; $i < $int_user; $i++) {
-    
-    $current_letter_up = intRandom (0, 25);
-    // var_dump($current_letter_up );
-
-    $letters_up_random = $letter_up[$current_letter_up];
-    // var_dump($letters_up_random );
-
-    $pass_let_up .= $letters_up_random;
-
-};
-
-
-$pass_symbols = '';
-// var_dump($pass_symbols);
-
-for ($i = 0 ; $i < $int_user; $i++) {
-    
-    $current_symbols = intRandom (0, 9);
-    var_dump($current_symbols);
-
-    $symbols_random = $symbols[$current_symbols];
-    var_dump($symbols_random);
-
-    $pass_symbols .= $symbols_random;
-
-
-};
-
-
-$pass_int = '';
-
-for ($i = 0 ; $i < $int_user; $i++) {
-    
-    $current_int = intRandom (0, 9);
-    var_dump($current_symbols);
-
-    $int_random = $int[$current_int];
-    var_dump($int_random);
-
-    $pass_int .= $int_random ;
-
-
-};
-
-
-
+require __DIR__ . "/partials/functions.php"
 
 
 
@@ -113,10 +25,7 @@ for ($i = 0 ; $i < $int_user; $i++) {
             <input type="submit" value="Genera password">
         </div>    
     </form>
-
-    <p> <?php echo $pass_let_low  ?></p>
-    <p> <?php echo $pass_let_up ?></p>
-    <p> <?php echo $symbols_random ?></p>
-    <p> <?php echo $pass_int ?> </p>
+    <p> <?php echo $sum  ?></p>
+    
 </body>
 </html>

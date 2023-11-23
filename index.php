@@ -1,7 +1,10 @@
 <?php 
 
-$num_user = $_GET["str_length"];
-var_dump($num_user);
+$str_user = $_GET["str_length"];
+var_dump($str_user);
+
+$int_user = intval($str_user);
+var_dump($int_user);
 
 $letter_up = "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z";
  
